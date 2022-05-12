@@ -3,9 +3,12 @@ AiCore Computer Vision project - to create a Rock Paper Scissors game using webc
 
 This README documents the actions taken and decisions made during each step of the project.
 
-Technologies used: Teachable-Machine
+Technologies used: Teachable-Machine, Python (keras, numpy, cv2)
 
 ## Milestone 1 - Create the Model
 Using Teachable-Machine, an image model with 4 classes (Rock, Paper, Scissors, Nothing) was created using webcam inputs. Default settings were used for number of epochs, learning rate and batch size. The images captured for each class were aimed at being diverse to minimise the risk of overfitting. 3 different backgrounds and two different people (with differing gender and race) were used providing both right and left handed gestures. 
 
 The model was downloaded for use in Tensorflow and saved to the repository.
+
+## Milestone 2 - Install the Dependencies
+Created a virtual environment to create a reproducable environemnt to manage dependencies. The relevant libraries were installed and a requirements file generated for another user to be able to run the code/to run the code on another device. Provided Python code was run in a script 'run_model.py' to run the keras model downloaded from Teachable-Machine.
