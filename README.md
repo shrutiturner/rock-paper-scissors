@@ -12,3 +12,6 @@ The model was downloaded for use in Tensorflow and saved to the repository.
 
 ## Milestone 2 - Install the Dependencies
 Created a virtual environment to create a reproducable environemnt to manage dependencies. The relevant libraries were installed and a requirements file generated for another user to be able to run the code/to run the code on another device. Provided Python code was run in a script 'run_model.py' to run the keras model downloaded from Teachable-Machine.
+
+## Milestone 3 - Create a Rock-Paper-Scissors Game
+A script was created to simulate a manual game of Rock-Paper-Scissors, where the user is asked for a text input for their choice. The computer randomly generates a choice from the options using the 'random' library. The code has been written in functions of single resposibility for clarity and code maintainability. The user input is always converted to lowercase to check its validity, only moving on with the game when a valid input has been accepted using a "while True" loop. The play() function calls the functions created to run the game as a whole.
