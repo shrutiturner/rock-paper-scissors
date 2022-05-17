@@ -1,6 +1,9 @@
 import cv2
-from keras.models import load_model
 import numpy as np
+import time
+
+from keras.models import load_model
+
 
 class CaptureVideo:
     def __init__(self) -> None:
@@ -22,9 +25,21 @@ class CaptureVideo:
         return(user_category)
 
 
+    def countdown(self):
+        """Prints console prompt to get ready to play RPS game."""
+        print("Make the shape of rock, paper or scissors with your hands in your webcam.")
+
+        for sec in range(3, 0, -1):
+            time.sleep(1)
+            print(sec)
+
+        return(None)
+
+
     def get_output(self):
         """Opens camera and returns the probability that the image belongs to each category (rock, paper, scissors, nothing)."""
         while True: 
+            self.countdown()
             ret, frame = self.cap.read()
             resized_frame = cv2.resize(frame, (224, 224), interpolation = cv2.INTER_AREA)
             image_np = np.array(resized_frame)
@@ -35,6 +50,7 @@ class CaptureVideo:
             choice = self.classify_output(prediction[0])
             if choice != 'nothing':
                 break
+            print("Invalid input, please provide one of the specified option.")
             # Press q to close the window
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break

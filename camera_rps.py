@@ -1,8 +1,6 @@
 import random
+
 from run_model import CaptureVideo
-
-
-import random
 
 class CameraRPS:
     def __init__(self):
@@ -23,19 +21,9 @@ class CameraRPS:
 
         user_cam = CaptureVideo()
 
-        print("***")
-        print("Make the shape of rock, paper or scissors with your hands in your webcam.")
-        print("***")
+        user_choice = user_cam.get_output()
 
-        while True:
-            #asks for user input
-            user_choice = user_cam.get_output()
-
-            #checks that the input matches either rock paper scissors
-            if user_choice in self.choices:
-                return user_choice
-
-            print("Invalid input, please provide one of the specified option.")
+        return(user_choice)
 
 
     def get_winner(self, computer_choice, user_choice):
