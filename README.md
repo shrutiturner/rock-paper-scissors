@@ -4,6 +4,7 @@ AiCore Computer Vision project - to create a Rock Paper Scissors game using webc
 This README documents the actions taken and decisions made during each step of the project.
 
 Technologies used: Teachable-Machine, Python (keras, numpy, cv2, time, random)
+To play the full game with camera, run `camera_rps.py`.
 
 ## Milestone 1 - Create the Model
 Using Teachable-Machine, an image model with 4 classes (Rock, Paper, Scissors, Nothing) was created using webcam inputs. Default settings were used for number of epochs, learning rate and batch size. The images captured for each class were aimed at being diverse to minimise the risk of overfitting. Three different backgrounds and two different people (with differing gender and race) were used providing both right and left handed gestures. 
