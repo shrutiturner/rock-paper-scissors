@@ -1,8 +1,13 @@
 import random
+from run_model import CaptureVideo
 
-class ManualRPS:
+
+import random
+
+class CameraRPS:
     def __init__(self):
         self.choices = ['rock', 'paper', 'scissors']
+
 
     def get_computer_choice(self):
         """Generates the computer choice of rock, paper or scissors using random module."""
@@ -13,15 +18,20 @@ class ManualRPS:
 
 
     def get_user_choice(self):
-        """Asks the user for a text input of their rock, paper, scissors choice and 
-        checks input validity."""
+        """Asks the user for a camera input of their rock, paper, scissors choice and 
+    checks input validity."""
+
+        user_cam = CaptureVideo()
+
+        print("***")
+        print("Make the shape of rock, paper or scissors with your hands in your webcam.")
+        print("***")
 
         while True:
             #asks for user input
-            user_choice = input("Please enter 'rock', 'paper' or 'scissors': ")
-            user_choice = user_choice.lower()
+            user_choice = user_cam.get_output()
 
-            #checks that the lowercase input matches either rock paper scissors
+            #checks that the input matches either rock paper scissors
             if user_choice in self.choices:
                 return user_choice
 
@@ -55,5 +65,6 @@ class ManualRPS:
         return(winner)
 
 
-rps_game = ManualRPS()
+rps_game = CameraRPS()
 print(rps_game.play())
+
