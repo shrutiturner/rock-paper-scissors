@@ -50,7 +50,7 @@ class CaptureVideo:
             choice = self.classify_output(prediction[0])
             if choice != 'nothing':
                 break
-            print("Invalid input, please provide one of the specified option.")
+            print("Invalid input, please provide one of the specified options.")
             # Press q to close the window
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
